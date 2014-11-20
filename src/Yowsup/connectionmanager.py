@@ -329,12 +329,10 @@ class YowsupConnectionManager:
 	def sendReceipt(self,jid,mtype,mid):
 		self._d("sending message received to "+jid+" - type:"+mtype+" - id:"+mid)
 		attr = {"to": jid, "id": mid}
+		
 		if mtype == "read":
-<<<<<<< HEAD
 			attr["type"] = "read"
-=======
-		  attr["type"] = "read"
->>>>>>> tgalal/master
+		
 		receiptNode = ProtocolTreeNode("receipt", attr)
 		self._writeNode(receiptNode)
 
